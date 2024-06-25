@@ -1,8 +1,7 @@
 onmessage = function (e) {
   const { bounds, size, id } = e.data;
   const offscreen = new OffscreenCanvas(size.width, size.height);
-  //   const canvas = new Canvas();
-  const ctx = offscreen.getContext("2d");
+  const ctx = offscreen.getContext("2d")!;
 
   const maxIterations = 100;
 
@@ -41,8 +40,6 @@ onmessage = function (e) {
     }
   }
   ctx.putImageData(imagedata, 0, 0);
-  // note: we output context2D!
-  //   context.finish(ctx);
 
   const imageBitmap = offscreen.transferToImageBitmap();
 

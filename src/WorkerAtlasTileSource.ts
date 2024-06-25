@@ -1,21 +1,24 @@
-import ImageWorker from "./ImageWorker";
-import { v4 } from "uuid";
+import { v4 } from 'uuid';
+import ImageWorker from './ImageWorker';
 
 export default {
-	//please, do not use Infinity, OSD internally builds a cached tile hierarchy
-	height: 1024 * 1024 * 1024,
-	width: 1024 * 1024 * 1024,
+	height: 512 * 256,
+	width: 512 * 256,
 	tileSize: 256,
-	minLevel: 9,
-	//fractal parameter
-	// maxIterations: 100,
+	minLevel: 8,
 	getTileUrl: function (level, x, y) {
-		//note that we still have to implement getTileUrl
-		//since we do, we use this to construct meaningful tile cache key
-		//fractal has different data for different tiles - just distinguish
-		//between all tiles
-		return `${level}/${x}-${y}`;
+		return (
+			"/atlas/" +
+			(level - 8) +
+			"-r" +
+			y +
+			"-c" +
+			x +
+			".jpg?ts=" +
+			Date.now()
+		);
 	},
+
 	getTilePostData: function (level, x, y) {
 		//yup, handy post data
 		return {
@@ -24,25 +27,7 @@ export default {
 			level: level
 		};
 	},
-	// iterateMandelbrot: function (refPoint) {
-	// 	var squareAndAddPoint = function (z, point) {
-	// 		let a = Math.pow(z.a, 2) - Math.pow(z.b, 2) + point.a;
-	// 		let b = 2 * z.a * z.b + point.b;
-	// 		z.a = a;
-	// 		z.b = b;
-	// 	};
 
-	// 	var length = function (z) {
-	// 		return Math.sqrt(Math.pow(z.a, 2) + Math.pow(z.b, 2));
-	// 	};
-
-	// 	let z = { a: 0, b: 0 };
-	// 	for (let i = 0; i < this.maxIterations; i++) {
-	// 		squareAndAddPoint(z, refPoint);
-	// 		if (length(z) > 2) return i / this.maxIterations;
-	// 	}
-	// 	return 1.0;
-	// },
 	downloadTileStart: function (context) {
 		let size = this.getTileBounds(context.postData.level, context.postData.dx, context.postData.dy, true);
 		let bounds = this.getTileBounds(context.postData.level, context.postData.dx, context.postData.dy, false);
@@ -73,7 +58,7 @@ export default {
 
 		/// ------ start worker code
 
-		const event = { bounds, size, id: v4() };
+		const event = { bounds, size, id: v4(), url: context.src };
 
 		function handleMessage(e) {
 
@@ -131,4 +116,4 @@ export default {
 		// our data is already context2D - what a luck!
 		return cache._data;
 	}
-}
+};

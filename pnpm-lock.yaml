@@ -7,15 +7,18 @@ specifiers:
   '@types/openseadragon': ^3.0.10
   '@types/react': ^18.3.3
   '@types/react-dom': ^18.3.0
+  '@types/uuid': ^10.0.0
   '@typescript-eslint/eslint-plugin': ^7.13.1
   '@typescript-eslint/parser': ^7.13.1
   '@vitejs/plugin-react': ^4.3.1
   eslint: ^8.57.0
   eslint-plugin-react-hooks: ^4.6.2
   eslint-plugin-react-refresh: ^0.4.7
+  jpeg-js: ^0.4.4
   openseadragon: ^4.1.1
   react: ^18.3.1
   react-dom: ^18.3.1
+  stats-js: ^1.0.1
   typescript: ^5.2.2
   uuid: ^10.0.0
   vite: ^5.3.1
@@ -24,15 +27,18 @@ dependencies:
   '@cornerstonejs/core': 1.80.0
   '@cornerstonejs/streaming-image-volume-loader': 1.80.0
   '@cornerstonejs/tools': 1.80.0
+  jpeg-js: 0.4.4
   openseadragon: 4.1.1
   react: 18.3.1
   react-dom: 18.3.1_react@18.3.1
+  stats-js: 1.0.1
   uuid: 10.0.0
 
 devDependencies:
   '@types/openseadragon': 3.0.10
   '@types/react': 18.3.3
   '@types/react-dom': 18.3.0
+  '@types/uuid': 10.0.0
   '@typescript-eslint/eslint-plugin': 7.13.1_oigvuefs7b7fy5bkl5ed2gavfq
   '@typescript-eslint/parser': 7.13.1_7fy76lh3a7kmslas56j4kvawoa
   '@vitejs/plugin-react': 4.3.1_vite@5.3.1
@@ -906,6 +912,10 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
+    dev: true
+
+  /@types/uuid/10.0.0:
+    resolution: {integrity: sha512-7gqG38EyHgyP1S+7+xomFtL+ZNHcKv6DwNaCZmJmo1vgMugyF3TCnXVg4t1uk89mLNwnLtnY3TpOpCOyp1/xHQ==}
     dev: true
 
   /@types/webxr/0.5.17:
@@ -1793,6 +1803,10 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
+  /jpeg-js/0.4.4:
+    resolution: {integrity: sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -2231,6 +2245,10 @@ packages:
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+    dev: false
+
+  /stats-js/1.0.1:
+    resolution: {integrity: sha512-EAwEFghGNv8mlYC4CZzI5kWghsnP8uBKXw6VLRHtXkOk5xySfUKLTqTkjgJFfDluIkf/O7eZwi5MXP50VeTbUg==}
     dev: false
 
   /stream-browserify/3.0.0:

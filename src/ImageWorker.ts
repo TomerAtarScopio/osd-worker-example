@@ -1,1 +1,1 @@
-export default new Worker(new URL('./ImageWorkerImpl.js', import.meta.url), { type: 'module' });
+export default new Worker(new URL('./ImageWorkerImpl.ts', import.meta.url), { type: 'module' });

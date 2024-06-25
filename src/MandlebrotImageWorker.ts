@@ -1,0 +1,1 @@
+export default new Worker(new URL('./MandlebrotWorkerImpl.ts', import.meta.url), { type: 'module' });

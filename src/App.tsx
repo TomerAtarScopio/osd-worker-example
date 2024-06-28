@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import OpenSeadragon from 'openseadragon';
 import WorkerVirtualTileSource from './WorkerVirtualTileSource';
-import WorkerAtlasTileSource from './WorkerAtlasTileSource';
-import AtlasTileSource from './AtlasTileSource';
 // @ts-ignore
 import Stats from 'stats-js';
 import VirtualTileSource from './VirtualTileSource';
@@ -11,18 +9,15 @@ import workerPatch from './workerPatch';
 
 const tileSources = [
 	{
+		name: 'dzi',
+		source: 'https://openseadragon.github.io/example-images/duomo/duomo.dzi',
+	},
+	{
 		name: 'worker dzi',
 		source: 'https://openseadragon.github.io/example-images/duomo/duomo.dzi',
 		worker: true,
 	},
-	{
-		name: 'dzi',
-		source: 'https://openseadragon.github.io/example-images/duomo/duomo.dzi',
-	},
-	{ name: 'atlas', source: AtlasTileSource },
 	{ name: 'mandelbrot', source: VirtualTileSource },
-
-	{ name: 'worker atlas', source: WorkerAtlasTileSource },
 	{ name: 'worker mandelbrot', source: WorkerVirtualTileSource },
 ];
 
